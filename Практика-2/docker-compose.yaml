@@ -1,0 +1,9 @@
+version: "3"
+services:
+  server:
+    container_name: pr2_server
+    build: ./server
+    volumes:
+      - ./server:/var/www/html
+    ports:
+      - "8080:80"
