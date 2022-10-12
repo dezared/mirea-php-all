@@ -1,9 +1,23 @@
 version: "3"
 services:
-  server:
-    container_name: pr2_server
-    build: ./server
+  server-console:
+    container_name: pr2_server_console
+    build: ./server-console
     volumes:
-      - ./server:/var/www/html
+      - ./server-console:/var/www/html
     ports:
       - "8080:80"
+  server-drawer:
+    container_name: pr2_server_drawer
+    build: ./server-drawer
+    volumes:
+      - ./server-drawer:/var/www/html
+    ports:
+      - "8081:80"
+  server-sort:
+    container_name: pr2_server_sort
+    build: ./server-sort
+    volumes:
+      - ./server-sort:/var/www/html
+    ports:
+      - "8082:80"
